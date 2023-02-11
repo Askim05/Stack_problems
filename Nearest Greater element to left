@@ -3,7 +3,7 @@
 import java.io.*;
 import java.util.*;
 
-class GFG {
+class stackProblems {
     public static void NGTL(int[] ar){
         ArrayList<Integer> lis=new ArrayList<>();
         Stack<Integer> st=new Stack<>();
@@ -27,8 +27,6 @@ class GFG {
     }
     
 	public static void main (String[] args) {
-		System.out.println("GfG!");
-		
 		int arr[]={10,5,11,6,20,12};//Reading the array
 		NGTL(arr);//calling the function....
 		
