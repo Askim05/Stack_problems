@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+
+class stockProblems{
+
+  public static void Stockspan(int[] arr){
+  Stack<Integer> stack=new Stack<Integer>();
+        ArrayList<Integer> list=new ArrayList<>();
+        int i=0;
+        while(i<n){
+            if(stack.empty()){
+                list.add(-1);
+                stack.push(i);
+                i++;
+            }
+            else if(i<n && arr[stack.peek()]>arr[i]){
+                list.add(stack.peek());
+                stack.push(i);
+                i++;
+            }
+            else if(i<n && arr[stack.peek()]<=arr[i]){
+                stack.pop();
+            }
+        }
+        //System.out.println(list);
+        int ans[]=new int[n];
+        ans[0]=1;
+        for(i=0;i<n;i++){
+            
+            ans[i]=i-list.get(i);
+            System.out.prin(ans[i]);
+            
+        }
+    }
+    
+  public static void main(String args[]){
+    int arr={10,4,5,90,120,80};//reading array
+    Stockspan(arr);//calling function...
+    }
+}
