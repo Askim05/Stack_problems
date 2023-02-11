@@ -1,0 +1,37 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.*;
+
+class stackProblems {
+    public static void NGTR(int arr[]){
+        Stack<Integer> list=new Stack<>();
+        Stack<Integer> stack=new Stack<>();
+        int i=arr.length-1;
+        while(i>=0){
+            if(stack.empty()){
+                stack.push(arr[i]);
+                list.push(-1);
+                i--;
+            }
+            if(i>=0 && stack.peek()>arr[i]){
+                
+                list.push(stack.peek());
+                stack.push(arr[i]);
+                i--;
+            }
+            if(i>=0 && stack.peek()<arr[i]){
+                stack.pop();
+            }
+        }
+        while(!list.empty()){
+            System.out.print(list.pop()+" ");
+        }
+        System.out.println();
+    }
+    
+	public static void main (String[] args) {
+		int ar[]={12,20,6,11,5,10}; // reading the array
+		NGTR(ar);//calling the function...
+	}
+}
