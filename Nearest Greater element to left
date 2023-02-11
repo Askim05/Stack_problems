@@ -1,0 +1,36 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.*;
+
+class GFG {
+    public static void NGTL(int[] ar){
+        ArrayList<Integer> lis=new ArrayList<>();
+        Stack<Integer> st=new Stack<>();
+        int i=0;
+        while(i<ar.length){
+            if(st.empty()){
+                lis.add(-1);
+                st.push(ar[i]);
+                i++;
+            }
+            if(i<ar.length && st.peek()>ar[i]){
+                lis.add(st.peek());
+                st.push(ar[i]);
+                i++;
+            }
+            if(i<ar.length && st.peek()<=ar[i]){
+                st.pop();
+            }
+        }
+        System.out.println(lis);
+    }
+    
+	public static void main (String[] args) {
+		System.out.println("GfG!");
+		
+		int arr[]={10,5,11,6,20,12};//Reading the array
+		NGTL(arr);//calling the function....
+		
+	}
+}
